@@ -6,8 +6,8 @@ from slack_sdk import WebClient
 SLACK_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 client = WebClient(token=SLACK_TOKEN)
 
-CHANNEL_ATTENDANCE = "CXXXXXXXX"  # 勤怠
-CHANNEL_TIMES = "CXXXXXXXX"       # times
+CHANNEL_ATTENDANCE = "C06CR7HAHC5"  # 勤怠
+CHANNEL_TIMES = "C08RJ3VE485"       # times
 
 JST = timezone(timedelta(hours=9))
 STATE_FILE = "notified_users.json"
