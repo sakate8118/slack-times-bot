@@ -1,0 +1,36 @@
+name: Slack Times Bot
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリ取得
+        uses: actions/checkout@v3
+
+      - name: Pythonセットアップ
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: ライブラリインストール
+        run: pip install -r requirements.txt
+
+      - name: Bot実行
+        run: python bot.py
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+      # ↓ここが超重要（状態保存）
+      - name: 状態ファイルをコミット
+        run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@example.com"
+          git add notified_users.json || true
+          git commit -m "update state" || true
+          git push
