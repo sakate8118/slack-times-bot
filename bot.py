@@ -106,7 +106,7 @@ def main():
             continue
 
         # ③ 30分経過
-        if now - last_post < timedelta(minutes=30):
+        if now - last_post < timedelta(minutes=90):
             continue
 
         # ④ すでに通知済みならスキップ
@@ -114,7 +114,7 @@ def main():
             continue
 
         # ⑤ DM通知
-        send_dm(user_id, "30分以上 #times-intern の更新がありません。投稿をお願いします！")
+        send_dm(user_id, "90分以上 #times-intern の更新がありません。投稿をお願いします！")
 
         # 記録
         state[today].append(user_id)
