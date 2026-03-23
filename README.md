@@ -1,4 +1,4 @@
-# Slack Times Bot（インターン稼働監視Bot）
+# Slack Times Bot
 
 ## ■ 概要
 
