@@ -1,5 +1,5 @@
 # Slack Times Bot
-
+https://api.slack.com/apps/A0AMQ12D72T
 ## ■ 概要
 
 本Botは、インターン生の稼働状況を可視化するために、Slack上の投稿状況を自動で監視し、一定時間更新がない場合にDMで通知するツールです。
